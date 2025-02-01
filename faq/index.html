@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.7.0">
+     
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>FAQ - Unofficial OSSM Documentation</title>
+
+
+<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../css/normalize.css" rel="stylesheet">
+<link href="../css/terminal.css" rel="stylesheet">
+<link href="../css/theme.css" rel="stylesheet">
+<link href="../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../css/theme.footer.css" rel="stylesheet">
+<!-- gruvbox_dark color palette -->
+<link href="../css/palettes/gruvbox_dark.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "..",
+    shortcuts = "{}";
+</script>
+<script src="../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal">
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">FAQ</span>
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../assembly/bom/">Bill of materials</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../assembly/">Assembly instructions</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../mounting/">Mounting</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/">R+D Reference Boards</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v1.0/">V1.0</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v2.0/">V2.0</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v2.1/">V2.1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v2.2/">V2.2</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v2.3/">V2.3</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v3.0/">V3.0</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../electronics/">OSSM Electronics</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../electronics/custom-board/">Custom Boards</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../software/">Software, Mainline</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../software/branches/">Software, Branches</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../motors/">Motors</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../motors/ihsv57/">IHSV57</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../motors/57AIM30/">57AIM30 (Gold Motor)</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/">Design Decisions</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/mcu/">MCU</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/motor/">Motor</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/voltage/">Voltage</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/homing/">Sensorless Homing</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/PCB/">Custom PCB</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Safety</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../hazards/">OSSM Hazard analysis</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../safety/">OSSM Safety considerations</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+        <li><a href="#q-what-is-ossm">Q: What is OSSM?</a></li><li><a href="#q-how-much-does-an-ossm-cost">Q: How much does an OSSM cost?</a></li><li><a href="#q-why-go-to-all-this-trouble-why-dont-you-just-buy-a-ready-made-machine">Q: Why go to all this trouble? Why don't you just buy a ready made machine?</a></li><li><a href="#q-what-parts-do-i-need">Q: What parts do I need?</a></li><li><a href="#q-ive-been-reading-about-motors-and-now-im-really-confused">Q: I've been reading about motors and now I'm really confused</a></li><li><a href="#q-i-am-a-size-queen-and-i-dont-think-the-ihsv57-or-57aim30-will-be-sufficient-for-my-use-what-is-the-upgrade-path">Q: I am a size queen and I don't think the IHSV57 or 57AIM30 will be sufficient for my use, what is the upgrade path?</a></li><li><a href="#q-hold-on-why-does-anal-play-need-more-powerful-motors">Q: Hold on, why does anal play need more powerful motors?</a></li><li><a href="#q-what-sized-3d-printer-do-i-need">Q: What sized 3D printer do I need?</a></li><li><a href="#q-what-print-material-is-best">Q: What print material is best?</a></li><li><a href="#q-what-is-the-infill-percentage">Q: What is the infill percentage?</a></li><li><a href="#q-how-thick-are-the-walls-and-top">Q: How thick are the walls and top?</a></li><li><a href="#q-what-are-these-flexible-parts-and-how-should-i-print-them">Q: What are these flexible parts and how should I print them?</a></li><li><a href="#q-how-do-i-mount-toys-onto-the-ossm">Q: How do I mount toys onto the OSSM?</a></li><li><a href="#q-what-to-i-mount-the-machine-on">Q: What to I mount the machine on?</a></li><li><a href="#q-how-do-i-control-my-ossm">Q: How do I control my OSSM</a></li><li><a href="#q-i-heard-somewhere-you-can-control-via-a-web-page-can-i-get-people-to-control-my-ossm-over-the-internet">Q: I heard somewhere you can "control via a web page?" Can I get people to control my OSSM over the internet?</a></li><li><a href="#q-x-toy-and-funscript-support-where-is-it">Q: X-Toy and funscript support. Where is it?</a></li><li><a href="#q-why-is-x-toysfunscriptsbuttplugio-so-difficult">Q: Why is X-Toys/Funscripts/ButtplugIO so difficult?</a></li><li><a href="#q-there-is-an-ossm-reference-board-do-i-have-to-buy-it-to-make-an-ossm">Q: There is an OSSM reference board do I have to buy it to make an OSSM?</a></li><li><a href="#q-power-supplies-what-size-do-i-need">Q: Power supplies what size do I need?</a></li><li><a href="#q-how-long-should-the-h-rail-be">Q: How long should the H-rail be?</a></li><li><a href="#q-what-is-the-size-of-the-24mm-thread-for-the-end-effector">Q: What is the size of the 24mm Thread for the End Effector?</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+<h3 id="q-what-is-ossm">Q: What is OSSM?</h3>
+<p>A: An OSSM is compact sex machine that can be customized to suit you. It is based around a NEMA23 closed loop servo motor that allows for dynamic changes in speed, depth and position.</p>
+<h3 id="q-how-much-does-an-ossm-cost">Q: How much does an OSSM cost?</h3>
+<p>A: That depends. R+D sells a fully assembled, ready-to-play version which varies slightly in price based on exchange rates and material costs. If you source all the components yourself, the OSSM usually comes out to between $300 and $400 USD. Add in a mounting solution and it can approach $500. This is far below the cost of any commercially available fucking machine with similar features. </p>
+<h3 id="q-why-go-to-all-this-trouble-why-dont-you-just-buy-a-ready-made-machine">Q: Why go to all this trouble?  Why don't you just buy a ready made machine?</h3>
+<p>A: The OSSM is open source, capable and extensible. The parts can be purchased locally and the number of custom parts is kept to a minimum.  Best of all you can fully control the stroke speed and most importantly depth.  You can make patterns or even your own control software. There is a vibrant and creative community dedicated to building add-ons and using the OSSM in new and interesting ways. </p>
+<h3 id="q-what-parts-do-i-need">Q: What parts do I need?</h3>
+<p>A: TODO Add the BOM</p>
+<h3 id="q-ive-been-reading-about-motors-and-now-im-really-confused">Q: I've been reading about motors and now I'm really confused</h3>
+<p>A: If you're confused, the recommended 57AIM30 is probably the right choice for you. Check out the <a href="../motors/">motors</a> for detailed information about the motor choices. </p>
+<h3 id="q-i-am-a-size-queen-and-i-dont-think-the-ihsv57-or-57aim30-will-be-sufficient-for-my-use-what-is-the-upgrade-path">Q:  I am a size queen and I don't think the IHSV57 or 57AIM30 will be sufficient for my use, what is the upgrade path?</h3>
+<p>A: You're not alone! There is work being done on larger, more powerful hardware implementations. Check out the discord for more information.</p>
+<h3 id="q-hold-on-why-does-anal-play-need-more-powerful-motors">Q: Hold on, why does anal play need more powerful motors?</h3>
+<p>A: Butts have big powerful muscles! It's common for people to bear down, or clench when things are feeling really good. Also it can be pretty fun shoving big objects in there! It can take a big motor to handle a big toy in a powerful butt.</p>
+<h3 id="q-what-sized-3d-printer-do-i-need">Q: What sized 3D printer do I need?</h3>
+<p>A: The minimum bed size is 105mm x 105mm for the largest single piece. Approximately 125mm of height is required for the shorter vac-u-lock compatible adapter, the plate is significantly shorter.</p>
+<h3 id="q-what-print-material-is-best">Q: What print material is best?</h3>
+<p>A: All of our testing has been with simple PLA, however if you do print it in an interesting material make sure to share it to the discord!</p>
+<h3 id="q-what-is-the-infill-percentage">Q: What is the infill percentage?</h3>
+<p>A: 30% has been found to work just fine with PLA for non flexible parts</p>
+<h3 id="q-how-thick-are-the-walls-and-top">Q: How thick are the walls and top?</h3>
+<p>A: Recommend at least 3mm for non flexible parts.</p>
+<h3 id="q-what-are-these-flexible-parts-and-how-should-i-print-them">Q: What are these flexible parts and how should I print them?</h3>
+<p>A: There are mounting solutions that use clamps for the OSSM these need some flexibility.  For these parts thinner walls 2mm, lower infill percentages and a gyroid pattern.</p>
+<h3 id="q-how-do-i-mount-toys-onto-the-ossm">Q: How do I mount toys onto the OSSM?</h3>
+<p>A: The standard OSSM implementation uses a 24mm threaded end effector, a vac-u-lock compatible attachment called the double-bubble can be screwed on, or a flat plate that any dildo can be lashed to can be screwed on. Since the 24mm end effector is standardized, you can put anything you can design on it. </p>
+<h3 id="q-what-to-i-mount-the-machine-on">Q: What to I mount the machine on?</h3>
+<p>A: Check out <a href="../mounting/">Mounting</a></p>
+<h3 id="q-how-do-i-control-my-ossm">Q: How do I control my OSSM</h3>
+<p>A: It depends on how you are going to use it.  Basic OSSM control is via the wired remote and a more advanced remote is available from community members (<a href="electronics/m5.md">M5 Remote</a>).  The control protocols are open source though, so the sky is the limit if you want to develop your own control system.</p>
+<h3 id="q-i-heard-somewhere-you-can-control-via-a-web-page-can-i-get-people-to-control-my-ossm-over-the-internet">Q: I heard somewhere you can "control via a web page?"  Can I get people to control my OSSM over the internet?</h3>
+<p>A: As of January 2025 you cannot control an OSSM over the internet.  In the past R&amp;D offered a web page that allowed very basic control with speed and depth settings over wifi. Development is in progress to allow this</p>
+<h3 id="q-x-toy-and-funscript-support-where-is-it">Q: X-Toy and funscript support.  Where is it?</h3>
+<p>A: As of January 2025 there is a highly experimental X-toy firmware forked from an earlier version that requires endstops.  This code has significant issue and is not considered to be safe for use on humans. There are frequent pauses, it loses track of where it is and has a tendency to randomly extend to maximum depth. Development of an X-Toys firmware is happening but it is complicated.</p>
+<h3 id="q-why-is-x-toysfunscriptsbuttplugio-so-difficult">Q: Why is X-Toys/Funscripts/ButtplugIO so difficult?</h3>
+<p>A: Things are a lot more complicated once you dig down into them.</p>
+<ul>
+<li>The motion core does not yet support position streaming. This is in development and requires a complete redesign of the safety architecture as you don't want to accidentally stab yourself.</li>
+<li>From the experimental software we learnt that the latency margin is really thin, Bluetooth especially struggles here. This will be a challenge to overcome.</li>
+<li>The data models of both xtoys and Buttplug.io do not support complex data models as it would be required for OSSM out of the box. As scaling to the full length of OSSM is just not an option. There might be a workaround by emulating an other toy. But you won't be able to control all aspects of OSSM through this.</li>
+</ul>
+<h3 id="q-there-is-an-ossm-reference-board-do-i-have-to-buy-it-to-make-an-ossm">Q: There is an OSSM reference board do I have to buy it to make an OSSM?</h3>
+<p>A: No you don't but it does make building an OSSM a lot easier and stops you having to solder anything.  </p>
+<h3 id="q-power-supplies-what-size-do-i-need">Q: Power supplies what size do I need?</h3>
+<p>A: See the following <a href="../design/voltage/">Document</a></p>
+<h3 id="q-how-long-should-the-h-rail-be">Q: How long should the H-rail be?</h3>
+<p>A: It is really up to you but a 350mm rail will give approximately 195mm of depth.  </p>
+<h3 id="q-what-is-the-size-of-the-24mm-thread-for-the-end-effector">Q: What is the size of the 24mm Thread for the End Effector?</h3>
+<p>A: It is a M24x3 (this is the size on the machine, do a test print for your new End Effector, you may have to upsize by 3-5%)</p>
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>

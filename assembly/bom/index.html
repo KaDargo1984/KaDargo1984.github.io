@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.7.0">
+     
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>Bill of materials - Unofficial OSSM Documentation</title>
+
+
+<link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../css/normalize.css" rel="stylesheet">
+<link href="../../css/terminal.css" rel="stylesheet">
+<link href="../../css/theme.css" rel="stylesheet">
+<link href="../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../css/theme.footer.css" rel="stylesheet">
+<!-- gruvbox_dark color palette -->
+<link href="../../css/palettes/gruvbox_dark.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "../..",
+    shortcuts = "{}";
+</script>
+<script src="../../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal">
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../faq/">FAQ</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active--active">Bill of materials</span>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../">Assembly instructions</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../mounting/">Mounting</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/">R+D Reference Boards</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v1.0/">V1.0</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.0/">V2.0</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.1/">V2.1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.2/">V2.2</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.3/">V2.3</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v3.0/">V3.0</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../electronics/">OSSM Electronics</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../electronics/custom-board/">Custom Boards</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../software/">Software, Mainline</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../software/branches/">Software, Branches</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../motors/">Motors</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../motors/ihsv57/">IHSV57</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../motors/57AIM30/">57AIM30 (Gold Motor)</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../design/">Design Decisions</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../design/mcu/">MCU</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../design/motor/">Motor</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../design/voltage/">Voltage</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../design/homing/">Sensorless Homing</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../design/PCB/">Custom PCB</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Safety</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../hazards/">OSSM Hazard analysis</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../safety/">OSSM Safety considerations</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#bill-of-materials">Bill Of Materials</a></li>
+        <li><a href="#octopart-links-for-ease-of-ordering-and-tracking">Octopart Links for ease of ordering and tracking</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <h2 id="bill-of-materials">Bill Of Materials</h2>
+<p>We are calling this the reference build, when deviating from it please check compatability with existing Bill Of Materials (BOM)</p>
+<ol>
+<li>
+<p><strong><a href="Hardware/OSSM%20Printed%20Parts">3D Printed Parts</a></strong></p>
+<ul>
+<li>This has recently had significant changes</li>
+<li><a href="Hardware/OSSM%20Printed%20Parts/end%20effector%20options">Make sure to choose one of the options for the toy adapters</a></li>
+<li>There are several mounting options available, the most popular being<br />
+  the <a href="Hardware/OSSM%20Mounting">Ulanzi Ball head mount</a> or<br />
+  the <a href="Hardware/OSSM%20Mounting/Shicks%204040%20mount">Shicks mount</a></li>
+<li>Thank you @Elims for the <a href="https://github.com/theelims">belt tensioner design</a></li>
+</ul>
+</li>
+<li>
+<p><strong>IHSV57 NEMA23 Servo with 8mm shaft</strong> <em>or</em> <strong>57AIM30 (Gold Motor)</strong>:</p>
+<ul>
+<li><strong>Gold Motor</strong></li>
+<li>New standard motor for OSSM, please see <a href="Documentation/Gold-Motor.md">Gold Motor Info</a> while docs are being updated.
+    This motor is cheaper, more compact and has improved features which are being implemented in OSSM firmware.</li>
+<li>For the latest information about this change, join the KinkyMakers Discord.</li>
+<li><strong>iHSV57 (Previous Standard Motor)</strong></li>
+<li><em>Avoid the StepperOnline version</em></li>
+<li>Make sure you get something with <strong>8mm</strong> shaft.</li>
+<li>
+<p>There are <strong>3</strong> sizes of this motor:<br />
+      100W = <a href="https://www.aliexpress.com/w/wholesale-iHSV57%2525252d30%2525252d10.html">iHSV57-30-<strong>10</strong></a></p>
+<p>140W = <a href="https://www.aliexpress.com/w/wholesale-iHSV57%2525252d30%2525252d14.html">iHSV57-30-<strong>14</strong></a></p>
+<p>180W = <a href="https://www.aliexpress.com/w/wholesale-iHSV57%2525252d30%2525252d18.html">iHSV57-30-<strong>18</strong></a></p>
+</li>
+<li>
+<p>We recommend motors with firmware version 6 (shown as <code>V60x</code>). Pay attention to
+    this, <a href="https://user-images.githubusercontent.com/131713378/234460307-1c29c18b-3bb5-4ac9-b66f-0dea9df0acac.png">the firmware version is printed on the label on the side.</a>
+    You cannot update the motor firmware. version 5 will work, but it is not as feature rich for potential new
+    features.</p>
+</li>
+<li>
+<p>Search around for the best deal for you - we reccommend searching "ihsv57" on Aliexpress.com and choosing the -10
+    -14 or -18. Some example listings:</p>
+<p><a href="https://www.aliexpress.us/item/2251832528412325.html">AliExpress - US</a></p>
+<p><a href="https://www.aliexpress.us/item/32714727077.html">AliExpress - CA &amp; AU</a></p>
+</li>
+<li>
+<p>For details on picking the right motor for your use case - check
+      this <a href="FAQ.md#q--what-strength-of--motor-do-i-need">FAQ</a></p>
+</li>
+<li>If you are using the 140W or 180W version it is recommended to use a 10mm wide belt and pulley (see the next two items)</li>
+</ul>
+</li>
+<li>
+<p><strong>GT2 Pulley 8mm Bore 20 Tooth, 10mm width</strong> :</p>
+<p><a href="https://www.amazon.ca/Timing-Pulley-8mm-bore-10mm-belt-20-Tooth/dp/B09L7D7HHT">Amazon - CA</a></p>
+<p><a href="https://www.amazon.com/WINSINN-Aluminum-Synchronous-Timing-Printer/dp/B07BTDRW5Z">Amazon - US</a></p>
+<p><a href="https://au.banggood.com/5MM-or-6_35MM-or-8MM-Bore-20TeethGT2-Alumium-Timing-Pulley-For-Width-10mm-GT2-Belt-p-1106314.html">Banggood - AU</a></p>
+</li>
+<li>
+<p><strong>GT2 Timing Belt - 10mm width</strong> :</p>
+<p><a href="www.amazon.ca/Timing-Meters-Creality-Anycubic-Printer/dp/B097T4DFM6">Amazon - CA</a></p>
+<p><a href="https://www.amazon.com/Timing-Meters-Creality-Anycubic-Printer/dp/B097T4DFM6">Amazon - US</a></p>
+<p><a href="">Amazon - AU</a></p>
+<ul>
+<li>Your desired stroke length plus about 200mm should be your minimum order length</li>
+</ul>
+</li>
+<li>
+<p><strong>Bearings</strong> MR115-2RS 5x11x4mm :
+    <a href="https://www.amazon.ca/gp/product/B07CVBW44R">Amazon - CA</a></p>
+<p><a href="https://www.amazon.com/Miniature-Bearings-MR115-2RS-Double-Shielded-5x11x4mm/dp/B08PFT72RQ">Amazon - US</a></p>
+<p><a href="https://www.aliexpress.us/item/2251832628223170.html">Aliexpress - AU</a></p>
+</li>
+<li>
+<p><strong>MGN12H Rail and bearing</strong> :</p>
+<p><a href="https://www.amazon.ca/MGN12H-Stainless-Carriage-Precision-Machine/dp/B09TWKWCZR">Amazon - CA</a></p>
+<p><a href="https://www.amazon.com/ReliaBot-Linear-Carriage-Printer-Machine/dp/B07B4DWWZC">Amazon - US</a></p>
+<p><a href="https://www.aliexpress.com/item/32840113910.html">Aliexpress - AU</a></p>
+<ul>
+<li>Minimum 250mm in length, suggested 350mm</li>
+<li>Rail length = desired stroke + 180mm</li>
+<li>Must be MGN<strong>12H</strong> rail - H is a longer car than C which gives greater stability. 12 indicates 12mm rail width.</li>
+</ul>
+</li>
+<li>
+<p><strong>Power Supply</strong>: 24 volt 4-5 amp w/ 2.1mm barrel DC plug</p>
+<ul>
+<li>
+<p>Larger motors generally need more power!<br />
+  180W -&gt; 24V 5A suggested minimum<br />
+  140W -&gt; 24V 4A suggested minimum<br />
+  100W -&gt; 24V 4A suggested minimum</p>
+</li>
+<li>
+<p>See the FAQ for more details about power supply sizing based on real world experience of OSSM users.</p>
+</li>
+<li>The OSSM will work with small power supplies, but will be limited on maximum force.</li>
+<li>Ensure the power supply is fully enclosed and shielded to avoid cross talk from electromagnetic interference (like a laptop power supply).</li>
+<li>Ensure the power supply has the correct approvals for your location - This really helps ensure performance as well! (UL, CE, etc.)</li>
+<li>It is strongly recommended that you purchase a good quality PSU such as a Meanwell.</li>
+</ul>
+</li>
+<li>
+<p><strong>Metric Hex Cap Screws</strong> :<br />
+<a href="https://www.amazon.ca/Comdox-500pcs-Socket-Screws-Assortment/dp/B06XQLTLHP">Amazon - CA &amp; US</a></p>
+<p><a href="https://www.amazon.com.au/VIGRUE-Stainless-Hexagon-Washers-Assortment/dp/B08CK9Y971">Amazon - AU</a> (this is a little
+expensive, we are looking for a cheaper alternative)</p>
+<ul>
+<li>A kit like the ones above will provide what's needed:</li>
+<li>4x m5x20</li>
+<li>1x m5x12 (can also use m5x20)</li>
+<li>10x m3x8</li>
+<li>2x m3x16</li>
+<li>8x m5 nuts</li>
+<li>8x m3 nuts</li>
+</ul>
+</li>
+<li>
+<p><strong>ESP32 Development Board</strong></p>
+<ul>
+<li><a href="https://research-and-desire.myshopify.com/collections/all/products/ossm-reference-board">An official OSSM reference PCB</a></li>
+<li>We do not currently have a best suggestion if you are not using a reference board, most generic development boards are the same</li>
+<li>We have found that the 3.3v boards may miss steps at high speed, so please use a level shifter as well.</li>
+<li>To start working on the project, something like this <a href="https://www.adafruit.com/product/3405">Adafruit board</a> is an excellent place to start.</li>
+<li>Accessories required for prototyping
+  include <a href="https://www.amazon.ca/Breadboard-Solderless-Prototype-Distribution-Connecting/dp/B01EV6LJ7G/ref=sr_1_5?dchild=1&amp;keywords=breadboard&amp;qid=1627823170&amp;sr=8-5">Breadboard</a>
+  and <a href="https://www.amazon.ca/120pcs-Multicolored-Breadboard-Arduino-raspberry/dp/B01LZF1ZSZ/ref=sr_1_5?dchild=1&amp;keywords=dupont+jumper&amp;qid=1627823220&amp;sr=8-5">Dupont Jumpers</a></li>
+</ul>
+</li>
+</ol>
+<h3 id="octopart-links-for-ease-of-ordering-and-tracking">Octopart Links for ease of ordering and tracking</h3>
+<p>A list of non-3d printed supplies in one place. Most of the parts aren't available through the preferred Octopart vendors but it still makes for a convenient list.</p>
+<p><a href="https://octopart.com/bom-tool/nfUsbySS">Octopart - Collected Bill of Materials for US Suppliers</a></p>
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>
