@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.7.0">
+     
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>OSSM Hazard analysis - Unofficial OSSM Documentation</title>
+
+
+<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../css/normalize.css" rel="stylesheet">
+<link href="../css/terminal.css" rel="stylesheet">
+<link href="../css/theme.css" rel="stylesheet">
+<link href="../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../css/theme.footer.css" rel="stylesheet">
+<!-- gruvbox_dark color palette -->
+<link href="../css/palettes/gruvbox_dark.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "..",
+    shortcuts = "{}";
+</script>
+<script src="../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal">
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/">R+D Reference Boards</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v1.0/">V1.0</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v2.0/">V2.0</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v2.1/">V2.1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v2.2/">V2.2</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v2.3/">V2.3</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../boards/v3.0/">V3.0</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../mounting/">Mounting</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../electronics/">OSSM Electronics</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../electronics/custom-board/">Custom Boards</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../software/">Software, Mainline</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../software/branches/">Software, Branches</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../motors/">Motors</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../motors/ihsv57/">IHSV57</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../motors/57AIM30/">57AIM30 (Gold Motor)</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+            
+                
+                
+        
+
+             
+            
+    
+        
+        <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/">Design Decisions</a>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/mcu/">MCU</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/motor/">Motor</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/voltage/">Voltage</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/homing/">Sensorless Homing</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../design/PCB/">Custom PCB</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item--active terminal-mkdocs-side-nav-section-no-index">Safety</span>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">OSSM Hazard analysis</span>
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../safety/">OSSM Safety considerations</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+    </ul>
+  
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <table>
+<thead>
+<tr>
+<th>Hazard</th>
+<th>Vulnerability</th>
+<th>likely consequence</th>
+<th>Design mitigation</th>
+<th>Build mitigation</th>
+<th>User mitigation</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Body parts caught in OSSM mechanism</td>
+<td>Exposed pullies and bearings</td>
+<td>Trauma to tissue</td>
+<td>Cover for pully and bearings</td>
+<td>Apply cover</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Body parts caught in OSSM mechanism</td>
+<td>Pinch point front and rear of linear rail</td>
+<td>Trauma to tissue</td>
+<td>Cover for pully and bearings</td>
+<td>Apply cover</td>
+<td>User avoids placing hand in area</td>
+<td></td>
+</tr>
+<tr>
+<td>Hair caught in OSSM mechanism</td>
+<td>Users hair gets dragged into OSSM drive mechanism</td>
+<td>Trauma to tissue, loss of hair, worst case partial scalping</td>
+<td>Cover for pully and bearings</td>
+<td>Apply cover</td>
+<td>Operator does not lean over OSSM in use. <br/><br/>Tie back hair.  <br/><br/>Use of OSSM only below waist.  <br/><br/>Full enclosure in skin tight latex (just to see if anyone else reads this)</td>
+<td></td>
+</tr>
+<tr>
+<td>Failure of dildo screw mount</td>
+<td>FDM prints can fail along deposition lines resulting in sharp splinters or exposed rail</td>
+<td>Trauma to tissue, internal injuries, cuts and bleeding.</td>
+<td>Screw thread protects the metal rail.  The rail supports the thread reducing stress on FDM part.  <br/><br/>Recommended settings for wall thickness and infill.</td>
+<td>Builder must use appropriate materials with sufficient adhesion (temperature), layer height optimized for strength.  Thicker walls and appropriate infill</td>
+<td>User ensures any toys are correctly mounted to reduce stress.</td>
+<td></td>
+</tr>
+<tr>
+<td>Failure of interchangeable dildo head</td>
+<td>FDM prints can fail along deposition lines resulting in sharp splinters</td>
+<td>Trauma to tissue, internal injuries, cuts and bleeding.</td>
+<td>Designers ensure there is sufficient strength in designs around likely failure points such as screw thread, mounting platters and external walls. <br/><br/>Design to avoid possibility of shards pointing in direction of OSSM movement towards the user.  <br/><br/>Recommended settings for wall thickness and infill.</td>
+<td>Builder must use appropriate materials with sufficient adhesion (temperature) layer height optimized for strength.  Thicker walls and appropriate infill</td>
+<td>User ensures any toys are correctly mounted to reduce stress.</td>
+<td></td>
+</tr>
+<tr>
+<td>OSSM penetrates too deeply</td>
+<td>Due to a software fault the OSSM penetrates too deeply injuring the user</td>
+<td>Trauma to tissue, internal injuries.</td>
+<td>Code review and testing. <br/><br/>Software architecture that isolates depth and positional controls into specific section of code that is tightly managed.  <br/><br/>Design for an emergency stop that cuts power to the motor <br/>Provision of hardware rear stop to reduce effective rail length.<br/><br/>Dildo adaptors with wide platter/bases to act as a physical stop.  <br/><br/>Recommendation of "safer rail lengths" to engineer a control.  <br/><br/>Introduction of position for use cases requiring a longer rail.</td>
+<td>Use as shorter rail as possible to minimize risks <br/><br/>Do not over specify motor to reduce available torque.<br/>  <br/>Implement emergency stop control for stepper motor.  <br/><br/></td>
+<td>User of machine should be able to move away from hazard.  Avoid restraints <br/><br/>Shorter toys with less depth<br/><br/>Toys with wider bases that cannot "over penetrate"</td>
+<td>GPIO and software controls do not effectively mitigate risks as in the case of software failure they will not interrupt in sufficient time.</td>
+</tr>
+<tr>
+<td>OSSM penetrates too deeply</td>
+<td>As the result of operator error the OSSM penetrates too deeply injuring the user</td>
+<td>Trauma to tissue, internal injuries.</td>
+<td>Dildo adaptors with wide platter/bases to act as a physical stop.<br/><br/>Identify clear requirements for stands including weight and dynamic load. <br/><br/>Consider failure modes of material and manufacturing techniques such as FDM and model orientation.  <br/><br/>Specify recommended materials, wall thicknesses and infill percentages.  <br/><br/>Ensure stands have multiple points securing each adjustment point.<br/><br/>Ensure stands are stable in all dimensions.</td>
+<td>Use as shorter rail as possible to minimize risks <br/><br/>Do not over specify motor to reduce available torque.<br/>  <br/>Implement emergency stop control for stepper motor.  <br/><br/></td>
+<td>Operator awareness and communication.<br/><br/>Do not make physical adjustments when OSSM is operating.  <br/><br/>User of machine should be able to move away from hazard.  Avoid restraints <br/><br/>Shorter toys with less depth<br/><br/>Toys with wider bases that cannot "over penetrate"</td>
+<td></td>
+</tr>
+<tr>
+<td>OSSM penetrates too deeply</td>
+<td>Due to the failure of a stand the OSSM penetrates too deeply injuring the user</td>
+<td>Trauma to tissue, internal injuries.</td>
+<td>Dildo adaptors with wide platter/bases to act as a physical stop.<br/><br/>Identify clear requirements for stands including weight and dynamic load. <br/><br/>Consider failure modes of material and manufacturing techniques such as FDM and model orientation.  <br/><br/>Specify recommended materials, wall thicknesses and infill percentages.  <br/><br/>Ensure stands have multiple points securing each adjustment point.<br/><br/>Ensure stands are stable in all dimensions.</td>
+<td>Make stands from appropriate materials using designer guidance.<br/><br/>Ensure hardware and fasteners are of sufficient strength.</td>
+<td>User of machine should be able to move away from hazard.  Avoid restraints <br/><br/>Shorter toys with less depth<br/><br/>Toys with wider bases that cannot "over penetrate"<br/><br/>Use your specific OSSM within the design parameters and if repurposing a design perform a hazard assessment.</td>
+<td></td>
+</tr>
+<tr>
+<td>Electrocution</td>
+<td>Over amperage results in electrical fire</td>
+<td>Burns, electruction</td>
+<td>Specify power supplies with correct amperage <br/><br/>Design PCB cover to protect higher voltage components<br/><br/>Use 50V or less power supplies.</td>
+<td>Purchase power supplies with correct amperage <br/><br/>Include appropriate cover in build</td>
+<td>Do not handle with wet hands.<br/><br/>Do not touch body of OSSM when in operation adjust via the stand.</td>
+<td></td>
+</tr>
+<tr>
+<td>Electrocution</td>
+<td>OSSM circuit board is splashed with body fluids</td>
+<td>Burns, electruction</td>
+<td>Design cover to protect PCB from body fluids.  This implies PCB cover should protect the side of the board facing the user.  <br/><br/>Stand designers design OSSM orientation and position to avoid contact with fluids and reduce the risk of pooling.</td>
+<td>Implement appropriate cover for design and stand combination.</td>
+<td>Use your specific OSSM within the design parameters and if repurposing a design perform a hazard assessment.</td>
+<td></td>
+</tr>
+<tr>
+<td>Malicous use</td>
+<td>A remote malicous user takes over internet remote control of users OSSM when in manual operation injuring the user via over penetration</td>
+<td>Trauma to tissue, internal injuries.</td>
+<td>Remote control lock out when local control is being used by default. <br/><br/>Software to allow configuration that is per powercycle.  Remote must be enabled after each restart.<br/></td>
+<td></td>
+<td></td>
+<td>Dual control ability is often used in remote estim with inexperienced drivers.  Maybe an override?</td>
+</tr>
+<tr>
+<td>Electro Magnetic Interference (EMI)</td>
+<td>EMI from a poor quality power supply causes unpredicatble movement of the OSSM effector via the wired remote</td>
+<td>Trauma to tissue, internal injuries.</td>
+<td></td>
+<td></td>
+<td>Use good quality power supplies from a reputable manufacturer.</td>
+<td>This hazard was reported by a community member when they used a budget unbranded power supply. Issue resolved with substitution of good quality PSU</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>
