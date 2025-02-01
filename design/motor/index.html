@@ -171,6 +171,82 @@
     
     </li>
             
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.1/">V2.1</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.2/">V2.2</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.3/">V2.3</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v3.0/">V3.0</a>
+        
+    
+    </li>
+            
             
     </ul>
         
@@ -239,25 +315,6 @@
       
         
             <ul class="terminal-mkdocs-side-nav-li-ul">
-        
-            
-            
-                
-                
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../../electronics/refboard/">Reference board</a>
-        
-    
-    </li>
-            
         
             
             
@@ -501,25 +558,6 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../servos/">Servo VS Stepper</a>
-        
-    
-    </li>
-            
-        
-            
-            
-                
-                
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
     terminal-mkdocs-side-nav-item" href="../voltage/">Voltage</a>
         
     
@@ -569,11 +607,113 @@
     
   </li>
         
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Safety</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../hazards/">OSSM Hazard analysis</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../safety/">OSSM Safety considerations</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
     </ul>
   
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#why-a-servo">Why a Servo</a></li>
+        <li><a href="#motors">Motors</a></li>
+        <li><a href="#ihsv57-30-x-36">IHSV57-30-x-36</a></li><li><a href="#57aim30-gold-motor">57AIM30 (Gold Motor)</a></li>
+    </ul>
 </nav>
 </aside>
             <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <h1 id="why-a-servo">Why a Servo</h1>
+<p>Servos and steppers serve similar purposes and operate on similar principles. Both are permanent magnet electric motors but steppers are designed for high-precision, low-speed use cases that require strong holding torque. A stepper motor's initial torque is much higher than a servo but drops off significantly as speed increases. A servo will have a much lower continuous torque but will maintain that torque throughout its speed range. Servos are also necessarily closed loop, meaning they will continue to provide torque when stopped and can react to changes in resistance. An open-loop stepper can lose steps and on a system such as the OSSM, this WILL cause a crash. </p>
+<h1 id="motors">Motors</h1>
+<h2 id="ihsv57-30-x-36">IHSV57-30-x-36</h2>
+<p>The IHSV57 is a 36V integrated AC servo made by JMC and comes in 3 sizes, related to the maximum rated power: 100W, 140W and 180W. As the price difference between the three sized was minimal and the 180W version left more room between the mounting face and the control box; the IHSV57-30-18-36 was the standard recommended motor until recently. While the motor is rated for 36v there have been multiple reports of the encoder inside the motor failing at voltages greater than 30v. A 24v power supply or 20v USB-C PD supply is more than sufficient. </p>
+<h2 id="57aim30-gold-motor">57AIM30 (Gold Motor)</h2>
+<p>The 57AIM30 is also a 36V integrated AC servo. It is part of a larger family of AIM motors from the 42AIM10 to the 60AIM40. The 57AIM30 was chosen as a replacement for the IHSV57 for the following reasons: 
+- Cheaper (20%) - dependent on availability and location.
+- Smaller (40% length of 180W standard - i.e. 60% reduction!).
+- No bulky control box
+- Lighter (50% weight of 180W).
+- Higher peak force (30% higher in real-world test).
+- Better over-torque handling - can be configured to reduce torque output instead of disable like IHSV57.
+- Is drop-in replacement for iHSV57 series making BOM compatible.</p>
+</section>
+
             </main>
         </div>
         <hr><footer>
