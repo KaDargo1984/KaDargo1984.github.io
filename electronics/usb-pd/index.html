@@ -18,7 +18,7 @@
 
     
  
-<title>Sensorless Homing - Unofficial OSSM Documentation</title>
+<title>USB-PD - Unofficial OSSM Documentation</title>
 
 
 <link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -452,7 +452,7 @@
         
         <a class="
 
-    terminal-mkdocs-side-nav-item" href="../../electronics/">OSSM Electronics</a>
+    terminal-mkdocs-side-nav-item--active" href="../">OSSM Electronics</a>
     
     
         
@@ -473,7 +473,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../../electronics/custom-board/">Custom Boards</a>
+    terminal-mkdocs-side-nav-item" href="../custom-board/">Custom Boards</a>
         
     
     </li>
@@ -492,7 +492,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../../electronics/m5/">M5 Remote</a>
+    terminal-mkdocs-side-nav-item" href="../m5/">M5 Remote</a>
         
     
     </li>
@@ -508,11 +508,9 @@
                 <li class="terminal-mkdocs-side-nav-li-ul-li">
     
         
-        
-            <a class="
+        <span class="
 
-    terminal-mkdocs-side-nav-item" href="../../electronics/usb-pd/">USB-PD</a>
-        
+    terminal-mkdocs-side-nav-item--active">USB-PD</span>
     
     </li>
             
@@ -702,7 +700,7 @@
         
         <a class="
 
-    terminal-mkdocs-side-nav-item--active" href="../">Design Decisions</a>
+    terminal-mkdocs-side-nav-item" href="../../design/">Design Decisions</a>
     
     
         
@@ -723,7 +721,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../mcu/">MCU</a>
+    terminal-mkdocs-side-nav-item" href="../../design/mcu/">MCU</a>
         
     
     </li>
@@ -742,7 +740,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../motor/">Motor</a>
+    terminal-mkdocs-side-nav-item" href="../../design/motor/">Motor</a>
         
     
     </li>
@@ -761,43 +759,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../voltage/">Voltage</a>
-        
-    
-    </li>
-            
-        
-            
-            
-                
-                
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        <span class="
-
-    terminal-mkdocs-side-nav-item--active">Sensorless Homing</span>
-    
-    </li>
-            
-        
-            
-            
-                
-                
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../PCB/">Custom PCB</a>
+    terminal-mkdocs-side-nav-item" href="../../design/voltage/">Voltage</a>
         
     
     </li>
@@ -816,7 +778,45 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../level-shifters/">Level Shifters</a>
+    terminal-mkdocs-side-nav-item" href="../../design/homing/">Sensorless Homing</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../design/PCB/">Custom PCB</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../design/level-shifters/">Level Shifters</a>
         
     
     </li>
@@ -910,19 +910,23 @@
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#early-homing-sensor">Early homing (sensor)</a></li>
-        <li><a href="#sensorless-homing">Sensorless Homing</a></li>
+        <li><a href="#an-introduction-to-usb-pd-power-delivery">An introduction to USB-PD (Power Delivery)</a></li>
         
     </ul>
 </nav>
 </aside>
             <main id="terminal-mkdocs-main-content">
 <section id="mkdocs-terminal-content">
-    <h1 id="early-homing-sensor">Early homing (sensor)</h1>
-<p>The first OSSM's used microswitches mounted to their body. A single microswitch on one side of the body allowed the firmware to identify one end of the rail, then a hardcoded <code>rail length</code> in the firmware defined how long the rail was. This was not ideal as different length rails required changes to the code. A second microswitch was added to certain OSSMs in order to identify both ends of the rail. However, ensuring that the hardware on the ends of the rails made positive contact with the microswitch and that the firmware reacted fast enough to prevent damage to the switches was not reliable. As of today, support for microswitch homing has been removed from the <a href="../../software/">mainline software</a>.</p>
-<h1 id="sensorless-homing">Sensorless Homing</h1>
-<p>In order to reduce complexity and increase reliability, sensorless homing was introduced. By routing motor power through the <a href="../PCB/">OSSM Control board</a> the MCU is able to detect the sharp rise in motor current when the system stalls against one end of the rail or the other. This allows for dynamic rail length and removes the complexity of the wiring and mounting of microswitches for homing. It also reduces the mechanical design constraints of microswitch mounting.</p>
-<p>Adding the current measurement capability to the <a href="../PCB/">OSSM Control board</a> does increase the BOM size, complexity and reduces the ability for someone to DIY the OSSM control system. However, the benefits of sensorless homing have far outweighed these minor downsides.</p>
+    <h1 id="an-introduction-to-usb-pd-power-delivery">An introduction to USB-PD (Power Delivery)</h1>
+<p>USB is a hellscape of different standards, capabilities and ports. From the OSSM perspective, we're concerned about the USB-PD standard which operates over the USB-C physical standard. In order to get more than 5v, both ends of the system must negotiate what voltages to use. Additionally, in order to pass more than 60w, the cable must have an e-marker defining how much wattage the cable can transmit. This can be up to 240w. The maximum capacity of any one component sets the maximum capacity for the system. In order to get these higher wattages, the USB-PD spec increases the voltage. The maximum amperage for USB-C is 5A, so in order to reach the 240w max spec, the voltage must be 48v. The highest USB-PD voltage that is still usable by the OSSM is 20v at 5a, limiting the OSSM to 100w continuous. The following are the USB-PD power options:
+- 5v, 5a, 25w
+- 9v, 5a, 45w
+- 15v, 5a, 75w
+- 20v, 5a, 100w
+- 28v, 5a, 140w
+- 36v, 5a, 180w
+- 48v, 5a, 240w</p>
+<p>In order for the OSSM to use USB-PD, the power supply must be capable of at least 100w, the cable must be e-marked for at least 100w and the USB-PD trigger being used must negotiate up to 20v at 5a. </p>
 </section>
 
             </main>

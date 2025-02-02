@@ -497,6 +497,25 @@
     
     </li>
             
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../electronics/usb-pd/">USB-PD</a>
+        
+    
+    </li>
+            
             
     </ul>
         
@@ -902,17 +921,14 @@
 <section id="mkdocs-terminal-content">
     <h2 id="bill-of-materials">Bill Of Materials</h2>
 <p>We are calling this the reference build, when deviating from it please check compatibility with existing Bill Of Materials (BOM)</p>
-<ol>
-<li>
 <p><strong><a href="../3dprintedparts/">3D Printed Parts</a></strong>
 Reference the above for information on choosing, printing and purchasing 3d printed parts</p>
-</li>
+<ol>
 <li>
 <p><strong>IHSV57 NEMA23 Servo with 8mm shaft</strong> <em>or</em> <strong>57AIM30 (Gold Motor)</strong>:</p>
 <ul>
 <li><strong>Gold Motor</strong></li>
-<li>New standard motor for OSSM, please see <a href="../../motors/57AIM30/">Gold Motor Info</a> while docs are being updated.
-    This motor is cheaper, more compact and has improved features which are being implemented in OSSM firmware.</li>
+<li>New standard motor for OSSM, please see <a href="../../motors/57AIM30/">Gold Motor Info</a></li>
 <li>For the latest information about this change, join the KinkyMakers Discord.</li>
 <li><strong>iHSV57 (Previous Standard Motor)</strong></li>
 <li><em>Avoid the StepperOnline version</em></li>
@@ -921,25 +937,9 @@ Reference the above for information on choosing, printing and purchasing 3d prin
 <p>There are <strong>3</strong> sizes of this motor:<br />
       100W = <a href="https://www.aliexpress.com/w/wholesale-iHSV57%2525252d30%2525252d10.html">iHSV57-30-<strong>10</strong></a></p>
 <p>140W = <a href="https://www.aliexpress.com/w/wholesale-iHSV57%2525252d30%2525252d14.html">iHSV57-30-<strong>14</strong></a></p>
-<p>180W = <a href="https://www.aliexpress.com/w/wholesale-iHSV57%2525252d30%2525252d18.html">iHSV57-30-<strong>18</strong></a></p>
+<p>180W = <a href="https://www.aliexpress.com/w/wholesale-iHSV57%2525252d30%2525252d18.html">iHSV57-30-<strong>18</strong></a>
+      - With the move to the 57AIM30, mainline support for the rs232 modbus on the IHSV will not exist. If you want to use the modbus, please ensure you get firmware version 6 or later (shown as <code>V60x</code>). The firmware version is printed on the label on the side of the motors control box. You cannot update the motor firmware. </p>
 </li>
-<li>
-<p>We recommend motors with firmware version 6 (shown as <code>V60x</code>). Pay attention to
-    this, <a href="https://user-images.githubusercontent.com/131713378/234460307-1c29c18b-3bb5-4ac9-b66f-0dea9df0acac.png">the firmware version is printed on the label on the side.</a>
-    You cannot update the motor firmware. version 5 will work, but it is not as feature rich for potential new
-    features.</p>
-</li>
-<li>
-<p>Search around for the best deal for you - we reccommend searching "ihsv57" on Aliexpress.com and choosing the -10
-    -14 or -18. Some example listings:</p>
-<p><a href="https://www.aliexpress.us/item/2251832528412325.html">AliExpress - US</a></p>
-<p><a href="https://www.aliexpress.us/item/32714727077.html">AliExpress - CA &amp; AU</a></p>
-</li>
-<li>
-<p>For details on picking the right motor for your use case - check
-      this <a href="../../faq/">FAQ</a></p>
-</li>
-<li>If you are using the 140W or 180W version it is recommended to use a 10mm wide belt and pulley (see the next two items)</li>
 </ul>
 </li>
 <li>
@@ -971,15 +971,15 @@ Reference the above for information on choosing, printing and purchasing 3d prin
 <ul>
 <li>Minimum 250mm in length, suggested 350mm</li>
 <li>Rail length = desired stroke + 180mm</li>
-<li>Must be MGN<strong>12H</strong> rail - H is a longer car than C which gives greater stability. 12 indicates 12mm rail width.</li>
+<li>Must be MGN<strong>12H</strong> rail - H is a longer carrige than C which gives greater stability. 12 indicates 12mm rail width.</li>
 </ul>
 </li>
 <li>
-<p><strong>Power Supply</strong>: 24 volt 4-5 amp w/ 2.1mm barrel DC plug</p>
+<p><strong>Power Supply</strong>: 24 volt 4-5 amp w/ 2.1mm barrel DC plug OR 20V USB-PD adapter with 2.1mm barrel jack</p>
 <ul>
 <li>
 <p>Larger motors generally need more power!<br />
-  180W -&gt; 24V 5A suggested minimum<br />
+  180W -&gt; 24V 5A suggested minimum  (also good motor)
   140W -&gt; 24V 4A suggested minimum<br />
   100W -&gt; 24V 4A suggested minimum</p>
 </li>
@@ -1008,15 +1008,10 @@ expensive, we are looking for a cheaper alternative)</p>
 </ul>
 </li>
 <li>
-<p><strong>ESP32 Development Board</strong></p>
+<p><strong>OSSM Control board</strong></p>
 <ul>
-<li><a href="https://research-and-desire.myshopify.com/collections/all/products/ossm-reference-board">An official OSSM reference PCB</a></li>
-<li>We do not currently have a best suggestion if you are not using a reference board, most generic development boards are the same</li>
-<li>We have found that the 3.3v boards may miss steps at high speed, so please use a level shifter as well.</li>
-<li>To start working on the project, something like this <a href="https://www.adafruit.com/product/3405">Adafruit board</a> is an excellent place to start.</li>
-<li>Accessories required for prototyping
-  include <a href="https://www.amazon.ca/Breadboard-Solderless-Prototype-Distribution-Connecting/dp/B01EV6LJ7G/ref=sr_1_5?dchild=1&amp;keywords=breadboard&amp;qid=1627823170&amp;sr=8-5">Breadboard</a>
-  and <a href="https://www.amazon.ca/120pcs-Multicolored-Breadboard-Arduino-raspberry/dp/B01LZF1ZSZ/ref=sr_1_5?dchild=1&amp;keywords=dupont+jumper&amp;qid=1627823220&amp;sr=8-5">Dupont Jumpers</a></li>
+<li>The best choice is <a href="https://research-and-desire.myshopify.com/collections/all/products/ossm-reference-board">an official OSSM reference PCB</a></li>
+<li>If you don't want to use a reference board, see <a href="../../electronics/custom-board/">this</a></li>
 </ul>
 </li>
 </ol>
