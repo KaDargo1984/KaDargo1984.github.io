@@ -18,7 +18,7 @@
 
     
  
-<title>V2.0 - Unofficial OSSM Documentation</title>
+<title>Planning - Unofficial OSSM Documentation</title>
 
 
 <link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -145,7 +145,7 @@
         
         <a class="
 
-    terminal-mkdocs-side-nav-item" href="../../assembly/bom/">Bill of materials</a>
+    terminal-mkdocs-side-nav-item" href="../bom/">Bill of materials</a>
     
     
         
@@ -166,7 +166,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../../assembly/3dprintedparts/">3D Printed Parts</a>
+    terminal-mkdocs-side-nav-item" href="../3dprintedparts/">3D Printed Parts</a>
         
     
     </li>
@@ -217,7 +217,7 @@
         
         <a class="
 
-    terminal-mkdocs-side-nav-item" href="../../assembly/">Assembly instructions</a>
+    terminal-mkdocs-side-nav-item--active" href="../">Assembly instructions</a>
     
     
         
@@ -235,10 +235,27 @@
                 <li class="terminal-mkdocs-side-nav-li-ul-li">
     
         
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">Planning</span>
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../../assembly/planning/">Planning</a>
+    terminal-mkdocs-side-nav-item" href="../hardware_assembly/">Hardware</a>
         
     
     </li>
@@ -257,26 +274,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../../assembly/hardware_assembly/">Hardware</a>
-        
-    
-    </li>
-            
-        
-            
-            
-                
-                
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../../assembly/electronics/">Electronics</a>
+    terminal-mkdocs-side-nav-item" href="../electronics/">Electronics</a>
         
     
     </li>
@@ -342,7 +340,7 @@
         
         <a class="
 
-    terminal-mkdocs-side-nav-item--active" href="../">R+D Reference Boards</a>
+    terminal-mkdocs-side-nav-item" href="../../boards/">R+D Reference Boards</a>
     
     
         
@@ -363,43 +361,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../v1.0/">V1.0</a>
-        
-    
-    </li>
-            
-        
-            
-            
-                
-                
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        <span class="
-
-    terminal-mkdocs-side-nav-item--active">V2.0</span>
-    
-    </li>
-            
-        
-            
-            
-                
-                
-            
-
-             
-                <li class="terminal-mkdocs-side-nav-li-ul-li">
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="../v2.1/">V2.1</a>
+    terminal-mkdocs-side-nav-item" href="../../boards/v1.0/">V1.0</a>
         
     
     </li>
@@ -418,7 +380,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../v2.2/">V2.2</a>
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.0/">V2.0</a>
         
     
     </li>
@@ -437,7 +399,7 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../v2.3/">V2.3</a>
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.1/">V2.1</a>
         
     
     </li>
@@ -456,7 +418,45 @@
         
             <a class="
 
-    terminal-mkdocs-side-nav-item" href="../v3.0/">V3.0</a>
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.2/">V2.2</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v2.3/">V2.3</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../boards/v3.0/">V3.0</a>
         
     
     </li>
@@ -967,14 +967,65 @@
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#todo-add-more-info-add-picture">TODO add more info, add picture</a></li>
+        <li><a href="#motor-choice">Motor choice</a></li>
+        <li><a href="#motion-system">Motion system</a></li>
+        <li><a href="#power-supply">Power supply</a></li>
+        <li><a href="#stand">Stand</a></li>
+        <li><a href="#end-effector">End Effector</a></li>
+        <li><a href="#building-your-ossm">Building your OSSM</a></li>
+        <li><a href="#printing">Printing</a></li><li><a href="#todo-the-following-sections">TODO, the following sections...</a></li>
         
     </ul>
 </nav>
 </aside>
             <main id="terminal-mkdocs-main-content">
 <section id="mkdocs-terminal-content">
-    <h1 id="todo-add-more-info-add-picture">TODO add more info, add picture</h1>
+    <p>The OSSM is not intended to be a “cheap sex machine” that competes against simple DC motor models on Aliexpress.  Instead, an OSSM is “cheap for what it can do sex machine” that is feature comparable or better than to the most expensive machines on the market with the ability to dynamically set stroke and depth, and move in patterns. </p>
+<p>An OSSM is not a great project to begin your maker journey.  It is more difficult to assemble than IKEA furniture and requires a diverse set of skills that includes 3D printing, mechanical assembly, electronics and possibly programming. </p>
+<p>There are easier and harder ways to build an OSSM.  From easiest to hardest, they are as follows:
+- Buy the "ready to play" model from R+D. This is exactly what it says on the box.
+- Buy all of the parts from R+D, they've done the sourcing, kitting and 3D printing, all you have to do is put it together.
+- Buy some combination of hardware from R+D and stuff you source yourself. 
+- Buy only the reference board and remote from R+D, source everything else yourself. 
+- (There be dragons beyond this point)
+- Have a custom PCB made from the reference design (it's open source!) source all the hardware yourself.
+- Design your own special PCB and source all the hardware yourself. (this is much harder than it seems if you're not an EE familiar with building custom boards) 
+- Etch the PCB at home, write all your own software... ect. you get the idea</p>
+<p>While it is tempting to save money by using unbranded parts, our experience has been that in many cases it is a false economy.  When it is important we will call out specific brands that we know work and are durable.  The more powerful you make your machine the more you need to use quality parts and the stronger things like the stand need to be. </p>
+<p>Find the Bill of Materials (BOM), <a href="../bom/">here</a></p>
+<p>Use of a reference board is recommended.  Not only it is neater and compatible with community enclosure and mount solutions.  The schematics (eagle files, KiCAD soon!) are available on the github repository or you can purchase it from R&amp;D.  Under the terms of the OSSM MIT license anyone can create and market an OSSM reference board. </p>
+<h3 id="motor-choice">Motor choice</h3>
+<p>Check out <a href="../../design/motor/">this doc</a> for information on motors.</p>
+<h3 id="motion-system">Motion system</h3>
+<p>The motion system for the OSSM is based on a 3D printing technology of a GT2 belt drive and linear rail.  This is highly efficient when coupled with a Servo motor compared to the crank based designs and can work well at both high and low speeds. </p>
+<p>Any good quality MGN12<strong>H</strong> rail will work for an OSSM.  While our software supports any length of rail most find that a 350mm version gives a good balance of stroke length (about 170mm) and stability.  Longer rails act like a lever increasing strain on the motor mount to the stand.  This can create the need to reinforce not only the motor clamp but also uprate the stand and adjustment clamps.  Even at 500mm the forces are considerably higher.  Our recommendation is to build with a 350mm first, get the stand working well before scaling up to a longer rail.</p>
+<p>Getting a good quality GT2 belt from a company such as Gates is essential for anything but the smallest motors.  Cheap belts have small teeth and wear more quickly than Gates belts and tend to stretch which in turn increases the likelihood of skipping.  </p>
+<p>The standard belt width 10mm which is fine for most users.  If you plan on using very large toys a 12mm belt is advantageous.  Just ensure that you increase the size of the pully as well. </p>
+<h3 id="power-supply">Power supply</h3>
+<p>On the KM discord we get more questions about power supplies than any other aspect of the build.  Most people are aware of a rule of thumb that states you need a power supply that exceeds the maximum draw of any component and expect it to apply universally. </p>
+<p>An OSSM is relatively efficient with power consumption and after much real world testing we have arrived at the following specifications:</p>
+<ul>
+<li>180W JMC Servo or 57AIM30 require a 24V 4 amp PSU</li>
+</ul>
+<p>Sourcing a good quality, appropriate power supply is essential.  Like other aspects of the OSSM it important to purchase good quality PSUs from a reputable seller.  Sealed units are preferred for safety as splashes can occur while using an OSSM.  Similarly ensure that all electrical connections are safe and not exposed. </p>
+<p>Our experience has been that Amazon/Aliexpress/eBay are the worst place to purchase PSU
+More information about voltage level, power supplies and USB-PD can be found <a href="../../design/voltage/">here</a></p>
+<h3 id="stand">Stand</h3>
+<p>We have an entire section of the docs dedicated to stands, it is quite the topic. See <a href="../../mounting/">here</a></p>
+<h3 id="end-effector">End Effector</h3>
+<p>The effector is the business end of an OSSM and where you mount toys.  There are a number of options that exist both in the official repository and print testing.  Most popular are the various threaded 3D printed options that can be quickly and cheaply printed.  Other choices include click lock that similar to those used by the larger Chinese sex machine companies.   </p>
+<p>We have an entire section of the docs dedicated to end effectors. See <a href="../../end-effectors/">here</a></p>
+<h3 id="building-your-ossm">Building your OSSM</h3>
+<h4 id="printing">Printing</h4>
+<p>An OSSM can be printed on most popular 3D Fused Deposition Modelling (FDM) printers if you are not purchasing a kit.  Resin printers typically do not have the necessary layer strength without specialized materials. </p>
+<p>PLA or variation</p>
+<p>All models published on the KM github have been tested.  Prior to starting your 3D printing, ensure your printer is well calibrated.</p>
+<h1 id="todo-the-following-sections">TODO, the following sections...</h1>
+<p>Assembly</p>
+<p>Testing</p>
+<p>Using you OSSM</p>
+<p>Designing for OSSM</p>
+<p>Getting support</p>
 </section>
 
             </main>
