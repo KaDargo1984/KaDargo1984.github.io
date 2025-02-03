@@ -18,7 +18,7 @@
 
     
  
-<title>Custom PCB - Unofficial OSSM Documentation</title>
+<title>Belt - Unofficial OSSM Documentation</title>
 
 
 <link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -796,9 +796,11 @@
                 <li class="terminal-mkdocs-side-nav-li-ul-li">
     
         
-        <span class="
+        
+            <a class="
 
-    terminal-mkdocs-side-nav-item--active">Custom PCB</span>
+    terminal-mkdocs-side-nav-item" href="../PCB/">Custom PCB</a>
+        
     
     </li>
             
@@ -832,11 +834,9 @@
                 <li class="terminal-mkdocs-side-nav-li-ul-li">
     
         
-        
-            <a class="
+        <span class="
 
-    terminal-mkdocs-side-nav-item" href="../why-belts/">Belt</a>
-        
+    terminal-mkdocs-side-nav-item--active">Belt</span>
     
     </li>
             
@@ -929,15 +929,41 @@
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#why-develop-a-custom-pcb">Why develop a custom PCB?</a></li>
-        
+        <li><a href="#why-use-a-belt">Why use a belt?</a></li>
+        <li><a href="#noise">Noise</a></li><li><a href="#cost">Cost</a></li><li><a href="#availability-and-convenience">Availability and Convenience</a></li><li><a href="#misalignment">Misalignment</a></li><li><a href="#safety">Safety</a></li><li><a href="#strength">Strength</a></li><li><a href="#why-not-use-a-rack-and-pinion">Why not use a rack and pinion?</a></li>
+        <li><a href="#noise_1">Noise</a></li><li><a href="#cost_1">Cost</a></li><li><a href="#availability-and-convenience_1">Availability and Convenience</a></li>
     </ul>
 </nav>
 </aside>
             <main id="terminal-mkdocs-main-content">
 <section id="mkdocs-terminal-content">
-    <h1 id="why-develop-a-custom-pcb">Why develop a custom PCB?</h1>
-<p>The OSSM's feature set, such as a header that mates directly to the IHSV57, a pulse/dir header for the 57AIM30, current sensing for <a href="../homing/">sensorless homing</a>, and a capacitor for back-emf mitigation all make the case for a custom PCB. By integrating all of the required electronics onto a single PCB, we avoid the jumper wire spaghetti that plagues many DIY electronics projects as well as enabling sensorless homing without bulky external modules. In the next PCB revision, <a href="../../boards/v3.0/">V3.0</a>, USB-PD will be supported on-board, further integrating the OSSM control board and reducing the complexity for users.</p>
+    <p>The OSSM uses a GT2 style belt system to deliver power from the motor to the linear rail that moves the end effector back and forth. </p>
+<h1 id="why-use-a-belt">Why use a belt?</h1>
+<h3 id="noise">Noise</h3>
+<p>The belt system is quiet, motor noise and the linear rail are both significantly louder than the noise from the belt moving across the bearings and motor. </p>
+<h3 id="cost">Cost</h3>
+<p>1m of genuine Gates GT2 10mm wide belt can be purchased for under $20usd. This is enough to belt to construct 2 standard sized OSSMs. A two pack of 20T GT2 pulleys can be had for less than $15usd. This makes the system extremely cost effective at around $22 for a single OSSM. </p>
+<h3 id="availability-and-convenience">Availability and Convenience</h3>
+<p>Due to the widespread proliferation of consumer 3D printers, GT2 belts and pulleys have become commodity items, manufactured by various venders and readily available to the hobbyist. The belts can be cut to any length to support an OSSM of basically any length. Additionally, the belt does not require lubrication. </p>
+<h3 id="misalignment">Misalignment</h3>
+<p>The belt and pulley system can tolerate slight misalignment in any axis with little adverse effects. This might come from the 3D printed parts or a misassembled machine.</p>
+<h3 id="safety">Safety</h3>
+<p>With the cover on, it is very difficult for anything to be pulled into the belt and pulley. Hair is the most significant safety issue. For more information on safety, see <a href="../../safety/">the safety doc</a>. </p>
+<h3 id="strength">Strength</h3>
+<p>A properly tensioned GT2 belt on the OSSM will cause a 180w IHSV57 or a 57AIM30 to stall before jumping teeth. These are the standard motors for an OSSM.</p>
+<h1 id="why-not-use-a-rack-and-pinion">Why not use a rack and pinion?</h1>
+<h3 id="noise_1">Noise</h3>
+<p>Rack and pinion systems with straight cut, dry gears are loud. One of the main design goals of the OSSM is to be quiet and unobtrusive. </p>
+<h3 id="cost_1">Cost</h3>
+<p>The long rack required for an OSSM are costly and are only available in fixed lengths. One of the main goals of the OSSM was not to require cutting steel components. </p>
+<h2 id="availability-and-convenience_1">Availability and Convenience</h2>
+<p>Rack and pinion systems are not as widely available as the belt drive system used by the OSSM. They also require lubrication which can get messy.</p>
+<h3 id="misalignment_1">Misalignment</h3>
+<p>Rack and pinons can not tolerate any misalignment other than across their movement axis.</p>
+<h3 id="safety_1">Safety</h3>
+<p>Rack and pinions have much more exposed pinch points and are much more likely to pull in hair, clothing or anything else that might dangle nearby.</p>
+<h3 id="strength_1">Strength</h3>
+<p>Rack and pinon systems are undoubtedly stronger than belts but this extra strength does not gain anything with the default motors.</p>
 </section>
 
             </main>
